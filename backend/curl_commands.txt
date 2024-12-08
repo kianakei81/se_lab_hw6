@@ -1,0 +1,8 @@
+# to get all data:
+curl http://127.0.0.1:5000/items
+# to post data:
+curl http://127.0.0.1:5000/items -X POST -d '{"name":"toy","description":"something with a lot of story"}' -H "Content-Type: application/json"
+# to put data:
+curl http://127.0.0.1:5000/items/id -X PUT -d '{"name":"toy","description":"something with a lot of storyio"}' -H "Content-Type: application/json"
+# to delete data:
+curl http://127.0.0.1:5000/items/id -X DELETE

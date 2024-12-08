@@ -1,0 +1,9 @@
+sudo -i -u postgres
+psql
+## commands to create the database
+CRAETE USER flask_user WITH PASSWORD 'flask_user'
+CREATE DATABASE flask_app_db
+GRANT ALL PRIVILEGES ON DATABASE flask_app_db TO flask_user;
+\c flask_app_db
+GRANT ALL ON SCHEMA public TO flask_user;
+## also make sure to add the following line to /etc/postgresql/<version>/main/pg_hba.conf to open flask_user user to public
