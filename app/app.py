@@ -36,9 +36,6 @@ def items_proxy_forwarding():
     )
     return (response.text, response.status_code, response.headers.items())
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)  # Gateway running on port 8080
-
 @app.route('/users/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def items_proxy(path):
     # Forward the request to the /items Flask service
