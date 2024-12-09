@@ -6,7 +6,7 @@ username = 'flask_user'
 password = 'flask_user'
 dbname = 'flask_app_db'
 # Configure your PostgreSQL database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{username}:{password}@localhost/{dbname}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{username}:{password}@172.17.0.1:5432/{dbname}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

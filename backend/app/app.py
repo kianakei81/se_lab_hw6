@@ -8,7 +8,7 @@ def users_proxy_forwarding():
     # Forward the request to the /users Flask service
     response = requests.request(
         method=request.method,
-        url=f"http://127.0.0.1:5001/items",
+        url=f"http://item:5001/items",
         headers={key: value for key, value in request.headers},
         json=request.get_json(silent=True),
     )
@@ -19,7 +19,7 @@ def users_proxy(path):
     # Forward the request to the /users Flask service
     response = requests.request(
         method=request.method,
-        url=f"http://127.0.0.1:5001/items/{path}",
+        url=f"http://item:5001/items/{path}",
         headers={key: value for key, value in request.headers},
         json=request.get_json(silent=True),
     )
@@ -30,7 +30,7 @@ def items_proxy_forwarding():
     # Forward the request to the /items Flask service
     response = requests.request(
         method=request.method,
-        url=f"http://127.0.0.1:5002/users",
+        url=f"http://user:5002/users",
         headers={key: value for key, value in request.headers},
         json=request.get_json(silent=True),
     )
@@ -44,7 +44,7 @@ def items_proxy(path):
     # Forward the request to the /items Flask service
     response = requests.request(
         method=request.method,
-        url=f"http://127.0.0.1:5002/users/{path}",
+        url=f"http://user:5002/users/{path}",
         headers={key: value for key, value in request.headers},
         json=request.get_json(silent=True),
     )
