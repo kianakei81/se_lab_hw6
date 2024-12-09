@@ -23,6 +23,16 @@ services:
     networks:
       - app_network
 
+  loadbalancer:
+    image: nginx
+    container_name: loadbalancer
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
 networks:
   app_network:
 
